@@ -52,13 +52,13 @@ const Navbar = React.forwardRef((props, ref) => {
           {/* Center Logo */}
           <div className="text-center flex-1">
   <img
-    src="/VM LOGO PRIMARY.png"
+    src="VM logo final-02.png"
     alt="Vittorio Milano"
     className="mx-auto transition"
     style={{
-      height: "clamp(30px, 4vw, 60px)", // Adjust the size as needed
+      height: "clamp(60px, 6vw, 60px)", // Adjust the size as needed
       objectFit: "contain",
-      filter: scrolled ? "none" : "brightness(0) invert(1)", // optional: invert for white on transparent bg
+      // optional: invert for white on transparent bg
     }}
   />
 </div>

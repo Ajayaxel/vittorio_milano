@@ -19,16 +19,16 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Logo Section */}
         <div className="text-center mb-6">
-        <div className="mb-4">
-  <img 
-    src="VM LOGO PRIMARY.png" 
-    alt="Vittorio Logo" 
-    className="h-12 mx-auto object-contain filter invert brightness-0"
-  />
-</div>
+          <div className="mb-4">
+            <img
+              src="VM logo final-02.png"
+              alt="VM logo final-02.png"
+              className="h-14 mx-auto object-contain "
+            />
+          </div>
 
           <p className="text-sm text-gray-300 max-w-2xl mx-auto">
-            Stay connected. Follow us on social media for style inspiration, behind-the-scenes glimpses into our 
+            Stay connected. Follow us on social media for style inspiration, behind-the-scenes glimpses into our
             atelier and exclusive updates on upcoming events and trunk shows.
           </p>
         </div>
@@ -51,7 +51,7 @@ const Footer = () => {
 
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-6">
-          
+
           {/* Flagship Store */}
           <div className="text-center lg:text-left">
             <h4 className="text-lg font-bold mb-4 text-white">Flagship Store</h4>
@@ -94,21 +94,22 @@ const Footer = () => {
             <p className="text-gray-300 text-sm mb-4">
               Sign up to our email newsletter to keep up to date with our latest news and special offers
             </p>
-            <div className="space-y-2">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email"
-                className="w-full px-3 py-2 bg-gray-100 text-black placeholder-gray-400 border border-gray-700 focus:border-white focus:outline-none transition-colors duration-300 text-sm"
-              />
-              <button
-                onClick={handleSubscribe}
-                className="w-full bg-white text-gray-900 font-bold py-2 px-4 hover:bg-gray-100 transition-colors duration-300"
-              >
-                SUBSCRIBE
-              </button>
-            </div>
+            <div className="flex w-[400px] max-w-md mx-auto">
+  <input
+    type="email"
+    value={email}
+    onChange={(e) => setEmail(e.target.value)}
+    placeholder="EMAIL ADDRESS"
+    className="flex-1 px-3 py-2 bg-transparent text-white placeholder-gray-400 border border-gray-400 border-r-0 focus:border-white focus:outline-none transition-colors duration-300 text-sm sm:text-base"
+  />
+  <button
+    onClick={handleSubscribe}
+    className="bg-transparent text-white font-semibold py-2 px-5 border border-gray-400 hover:border-white hover:bg-white hover:text-black transition-colors duration-300 text-sm sm:text-base"
+  >
+    SUBMIT
+  </button>
+</div>
+
           </div>
         </div>
       </div>

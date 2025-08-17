@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { MessageCircle, X, Send } from 'lucide-react';
+import {  X, Send, Phone } from 'lucide-react';
+import { FaWhatsapp } from "react-icons/fa";
 
 const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +19,6 @@ const ChatWidget = () => {
 
   const handleSendMessage = () => {
     if (message.trim()) {
-      // Handle message sending logic here
       console.log('Sending message:', message);
       setMessage('');
     }
@@ -30,11 +30,16 @@ const ChatWidget = () => {
     }
   };
 
+  // Call functionality
+  const handleCall = () => {
+    window.location.href = "tel:+911234567890"; // replace with your business number
+  };
+
   return (
     <>
       {/* Chat Modal */}
       {isOpen && (
-        <div className="fixed bottom-20 right-4 w-80 bg-white rounded-lg shadow-2xl z-50 border border-gray-200 overflow-hidden">
+        <div className="fixed bottom-24 right-4 w-80 bg-white rounded-lg shadow-2xl z-50 border border-gray-200 overflow-hidden">
           {/* Header */}
           <div className="bg-[rgb(96,12,3)] text-white p-4 relative">
             <h3 className="text-lg font-semibold mb-2">Chat with us</h3>
@@ -43,7 +48,7 @@ const ChatWidget = () => {
             </p>
             <button
               onClick={() => setIsOpen(false)}
-              className="absolute top-3 right-3 p-1 hover:bg-[rgb(96,12,3)] rounded-full transition-colors"
+              className="absolute top-3 right-3 p-1 bg-[rgb(96,12,3)] hover:scale-110 rounded-full transition-colors"
             >
               <X size={20} />
             </button>
@@ -92,25 +97,39 @@ const ChatWidget = () => {
         </div>
       )}
 
-      {/* Fixed Chat Icon */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-4 right-4 w-16 h-16 rounded-full shadow-lg transition-all duration-300 z-50 flex items-center justify-center ${
-          isOpen
-            ? 'bg-red-700 hover:bg-[rgb(96,12,3)]'
-            : 'bg-red-700 hover:bg-[rgb(96,12,3)] hover:scale-110'
-        }`}
-      >
-        {isOpen ? (
-          <X size={24} className="text-white" />
-        ) : (
-          <MessageCircle size={24} className="text-white" />
-        )}
-      </button>
+      {/* Floating Buttons (Chat + Call) */}
+      <div className="fixed bottom-4 right-4 flex gap-3 z-50">
+        {/* Chat Button */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className={`w-12 h-12 rounded-full shadow-lg transition-all duration-300 flex items-center justify-center ${
+            isOpen
+              ? 'bg-[rgb(96,12,3)] hover:bg-[rgb(96,12,3)]'
+              : 'bg-[rgb(96,12,3)] hover:bg-[rgb(96,12,3)] hover:scale-110'
+          }`}
+        >
+          {isOpen ? (
+            <X size={24} className="text-white" />
+          ) : (
+            <FaWhatsapp size={22} className="text-yellow-400" />
+          )}
+        </button>
 
-
+        {/* Call Button */}
+        <button
+          onClick={handleCall}
+          className="w-12 h-12 rounded-full shadow-lg bg-[rgb(96,12,3)] hover:bg-[rgb(96,12,3)] hover:scale-110 transition-all duration-300 flex items-center justify-center"
+          title="Call us"
+        >
+          <Phone size={22} className="text-white text-yellow-400" />
+        </button>
+      </div>
     </>
   );
 };
 
 export default ChatWidget;
+
+
+
+

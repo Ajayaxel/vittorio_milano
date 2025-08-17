@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from "react";
 
 const videos = [
-  { id: 1, src: "https://cdn.shopify.com/videos/c/o/v/13b326683f134d16b18b12ec8211f336.mp4" },
-  { id: 2, src: "https://cdn.shopify.com/videos/c/o/v/f414ff4dfd234b2ab88d38d16c22f38b.mp4" },
-  { id: 3, src: "https://cdn.shopify.com/videos/c/o/v/13b326683f134d16b18b12ec8211f336.mp4" },
-  { id: 4, src: "https://cdn.shopify.com/videos/c/o/v/f414ff4dfd234b2ab88d38d16c22f38b.mp4" },
+  { id: 1, src: "https://cdn.shopify.com/videos/c/o/v/13b326683f134d16b18b12ec8211f336.mp4" , name: "CLASSIC TUXEDO"},
+  { id: 2, src: "https://cdn.shopify.com/videos/c/o/v/f414ff4dfd234b2ab88d38d16c22f38b.mp4" , name: "WEDDING SUIT"},
+  { id: 3, src: "https://cdn.shopify.com/videos/c/o/v/13b326683f134d16b18b12ec8211f336.mp4" , name: "LUXURY BLAZER"},
+  { id: 4, src: "https://cdn.shopify.com/videos/c/o/v/f414ff4dfd234b2ab88d38d16c22f38b.mp4" , name: "BLACK TIE OUTFIT"},
 ];
 
 export default function VideoCardsSection() {
@@ -53,7 +53,11 @@ export default function VideoCardsSection() {
               loop
               playsInline
             />
+                 <p className="mt-2 text-center text-gray-800 text-md font-medium">
+            {video.name}
+          </p>
           </div>
+     
         ))}
       </div>
     </div>
