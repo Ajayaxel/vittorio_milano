@@ -23,11 +23,11 @@ export default function MovingTailor() {
             </div>
             {/* Right - Content */}
             <div className="w-full md:w-1/2 text-center flex flex-col justify-center items-center md:text-center">
-                <h2 className="text-xl font-semibold justify-center items-center mb-4">The Moving Tailor</h2>
+                <h2 className="text-xl font-semibold justify-center items-center mb-4">Semi-Bespoke Suits</h2>
                 <p className="text-gray-700 flex  items-center leading-relaxed mb-6">
-                    Bespoke, on your terms. Our master tailors bring the atelier to you,
-                    offering personalised<br />consultations and a curated selection of luxe
-                    fabrics, all in the comfort of your chosen space.
+
+                    Pressed for time? Our semi-bespoke suits are your sartorial shortcut. Experience our signature fit<br />
+                    and hand-tailored finesse, made from the same selection of premium fabrics.
                 </p>
                 <button className="px-6 py-3 text-black font-medium bg-transparent hover:text-white hover:bg-[rgb(96,12,3)] hover:border-[rgb(96,12,3)] transition rounded-md">
                     BOOK A CONSULTATION

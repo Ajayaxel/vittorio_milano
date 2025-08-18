@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from "react";
 
 const videos = [
-  { id: 1, src: "/VIDEO-2025-08-17-21-41-50.mp4" , name: "CLASSIC TUXEDO"},
-  { id: 2, src: "/VIDEO-2025-08-17-21-38-17.mp4" , name: "WEDDING SUIT"},
-  { id: 3, src: "/VIDEO-2025-08-17-21-41-50.mp4" , name: "LUXURY BLAZER"},
-  { id: 4, src: "/VIDEO-2025-08-17-21-41-50.mp4" , name: "BLACK TIE OUTFIT"},
+  { id: 1, src: "/VIDEO-2025-08-17-21-41-50.mp4" , name: "TRUE BESPOKE"},
+  { id: 2, src: "/VIDEO-2025-08-17-21-38-17.mp4" , name: "WOMEN’S"},
+  { id: 3, src: "/VIDEO-2025-08-17-21-41-50.mp4" , name: "THE BLACK TIE"},
+  { id: 4, src: "/VIDEO-2025-08-17-21-41-50.mp4" , name: "INDIAN WEDDING"},
 ];
 
 export default function VideoCardsSection() {

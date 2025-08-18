@@ -10,6 +10,7 @@ const AtelierSection = () => {
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-gray-900 leading-snug">
             Why Vittorio<span className="text-[rgb(96,12,3)]"> Milano</span> ?
           </h2>
+          <p className="text-lg font-medium text-gray-700">Beyond needle and thread, choose Vittorio Milano for…</p>
 
           <ul className="space-y-5 text-gray-700 text-lg leading-relaxed">
             <li>✔ Uncompromising craftsmanship <br /> <span className="text-gray-500 text-base">Meticulous hand-tailoring. Finest fabrics. Sartorial artistry.</span></li>

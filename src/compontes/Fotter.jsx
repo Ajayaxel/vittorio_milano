@@ -19,11 +19,11 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Logo Section */}
         <div className="text-center mb-6">
-          <div className="mb-4">
+          <div className="mb-4  ">
             <img
               src="VM logo final-02.png"
               alt="VM logo final-02.png"
-              className="h-14 mx-auto object-contain "
+              className="h-[200px] mx-auto object-contain "
             />
           </div>
 
