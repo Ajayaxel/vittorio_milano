@@ -1,6 +1,10 @@
+
+
+// Updated Navbar.js
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { FaArrowDown } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Navbar = React.forwardRef((props, ref) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +40,7 @@ const Navbar = React.forwardRef((props, ref) => {
       { label: "Made-To-Measure Trousers", link: "/made-to-measure/trousers" },
       { label: "Corporate Packages", link: "/made-to-measure/corporate" },
       { label: "Executive Packages", link: "/made-to-measure/executive" },
-      { label: "Dapper’s Signature", link: "/made-to-measure/signature" },
+      { label: "Dapper's Signature", link: "/made-to-measure/signature" },
     ],
     "Ready to wear": [
       { label: "Curated Collections", link: "/ready-to-wear/curated-collections" },
@@ -91,23 +95,25 @@ const Navbar = React.forwardRef((props, ref) => {
           <div className="flex justify-between items-center mx-10 py-2">
             {/* Center Logo */}
             <div className="text-center flex-1">
-              <div
-                className={`mx-auto transition font-bold ${scrolled ? "text-black" : "text-white"
-                  }`}
-                style={{
-                  fontSize: "clamp(24px, 4vw, 32px)",
-                  height: "clamp(60px, 6vw, 80px)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <img
-                  src="VM logo final-02.png"
-                  alt=""
-                  className="lg:h-[130px] md:h-[100px] sm:h-[80px] h-[60px]"
-                />
-              </div>
+              <Link to="/">
+                <div
+                  className={`mx-auto transition font-bold ${scrolled ? "text-black" : "text-white"
+                    }`}
+                  style={{
+                    fontSize: "clamp(24px, 4vw, 32px)",
+                    height: "clamp(60px, 6vw, 80px)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <img
+                    src="VM logo final-02.png"
+                    alt=""
+                    className="lg:h-[130px] md:h-[100px] sm:h-[80px] h-[60px]"
+                  />
+                </div>
+              </Link>
             </div>
 
             {/* Mobile Hamburger */}
@@ -143,7 +149,7 @@ const Navbar = React.forwardRef((props, ref) => {
                     {item}
                   </a>
 
-                  {/* Bespoke Mega Menu (unchanged) */}
+                  {/* Bespoke Mega Menu */}
                   {item === "Bespoke" && hovered === "Bespoke" && (
                     <div
                       className="absolute 
@@ -169,10 +175,10 @@ const Navbar = React.forwardRef((props, ref) => {
                             Bespoke Suits
                           </h4>
                           <ul className="space-y-3 text-sm text-gray-700">
-                            <li><a href="#" className="hover:text-black transition-colors">Bespoke Shirts</a></li>
-                            <li><a href="#" className="hover:text-black transition-colors">Bespoke Trousers</a></li>
-                            <li><a href="#" className="hover:text-black transition-colors">Bespoke Shooting Wear</a></li>
-                            <li><a href="#" className="hover:text-black transition-colors">Bespoke Golf Wear</a></li>
+                            <li><Link to="/bespoke/shirts" className="hover:text-black transition-colors">Bespoke Shirts</Link></li>
+                            <li><Link to="/bespoke/trousers" className="hover:text-black transition-colors">Bespoke Trousers</Link></li>
+                            <li><Link to="/bespoke/shooting" className="hover:text-black transition-colors">Bespoke Shooting Wear</Link></li>
+                            <li><Link to="/bespoke/golf" className="hover:text-black transition-colors">Bespoke Golf Wear</Link></li>
                           </ul>
                         </div>
 
@@ -185,9 +191,9 @@ const Navbar = React.forwardRef((props, ref) => {
                             Bespoke Womens wear
                           </h4>
                           <ul className="space-y-3 text-sm text-gray-700">
-                            <li><a href="#" className="hover:text-black transition-colors">W Bespoke Suits</a></li>
-                            <li><a href="#" className="hover:text-black transition-colors">W Bespoke Shirts</a></li>
-                            <li><a href="#" className="hover:text-black transition-colors">W Bespoke Trousers</a></li>
+                            <li><Link to="/bespoke/women/suits" className="hover:text-black transition-colors">W Bespoke Suits</Link></li>
+                            <li><Link to="/bespoke/women/shirts" className="hover:text-black transition-colors">W Bespoke Shirts</Link></li>
+                            <li><Link to="/bespoke/women/trousers" className="hover:text-black transition-colors">W Bespoke Trousers</Link></li>
                           </ul>
                         </div>
 
@@ -200,9 +206,9 @@ const Navbar = React.forwardRef((props, ref) => {
                             VM 9-Step Process
                           </h4>
                           <ul className="space-y-3 text-sm text-gray-700">
-                            <li><a href="#" className="hover:text-black transition-colors">Garments Care</a></li>
-                            <li><a href="#" className="hover:text-black transition-colors">The Moving Tailor</a></li>
-                            <li><a href="#" className="hover:text-black transition-colors">Speak to the stylist</a></li>
+                            <li><Link to="/garments-care" className="hover:text-black transition-colors">Garments Care</Link></li>
+                            <li><Link to="/moving-tailor" className="hover:text-black transition-colors">The Moving Tailor</Link></li>
+                            <li><Link to="/speak-stylist" className="hover:text-black transition-colors">Speak to the stylist</Link></li>
                           </ul>
                         </div>
 
@@ -226,7 +232,7 @@ const Navbar = React.forwardRef((props, ref) => {
                     </div>
                   )}
 
-                  {/* NEW: Made to Measure Mega Menu (matches your requested headings) */}
+                  {/* Made to Measure Mega Menu */}
                   {item === "Made to Measure" && hovered === "Made to Measure" && (
                     <div
                       className="absolute ml-[200px] left-1/2 transform -translate-x-1/2 top-full bg-white shadow-xl border border-gray-200 rounded-lg 
@@ -255,14 +261,14 @@ const Navbar = React.forwardRef((props, ref) => {
                           </h4>
                           <ul className="space-y-3 text-sm text-gray-700">
                             <li>
-                              <a href="/made-to-measure/shirts" className="hover:text-black transition-colors">
+                              <Link to="/made-to-measure/shirts" className="hover:text-black transition-colors">
                                 Made-To-Measure Shirts
-                              </a>
+                              </Link>
                             </li>
                             <li>
-                              <a href="/made-to-measure/trousers" className="hover:text-black transition-colors">
+                              <Link to="/made-to-measure/trousers" className="hover:text-black transition-colors">
                                 Made-To-Measure Trousers
-                              </a>
+                              </Link>
                             </li>
                           </ul>
                         </div>
@@ -274,14 +280,14 @@ const Navbar = React.forwardRef((props, ref) => {
                           </h4>
                           <ul className="space-y-3 text-sm text-gray-700">
                             <li>
-                              <a href="/made-to-measure/executive" className="hover:text-black transition-colors">
+                              <Link to="/made-to-measure/executive" className="hover:text-black transition-colors">
                                 Executive Packages
-                              </a>
+                              </Link>
                             </li>
                             <li>
-                              <a href="/made-to-measure/corporate" className="hover:text-black transition-colors">
-                                Dapper’s Signature
-                              </a>
+                              <Link to="/made-to-measure/corporate" className="hover:text-black transition-colors">
+                                Dapper's Signature
+                              </Link>
                             </li>
                           </ul>
                         </div>
@@ -290,7 +296,7 @@ const Navbar = React.forwardRef((props, ref) => {
                     </div>
                   )}
 
-                  {/* UPDATED: Indian Wedding Mega Menu (full list, responsive) */}
+                  {/* Indian Wedding Mega Menu */}
                   {item === "Indian Wedding" && hovered === "Indian Wedding" && (
                     <div
                       className="absolute left-1/2 transform -translate-x-1/2 top-full bg-white shadow-xl border border-gray-200 rounded-lg 
@@ -320,8 +326,7 @@ const Navbar = React.forwardRef((props, ref) => {
                             Traditional Wear
                           </h4>
                           <ul className="space-y-3 text-sm text-gray-700 text-center">
-
-                            <li><a href="/indian-wedding/vittorio-darbare" className="hover:text-black transition-colors">Vittorio Milano X Darbaré</a></li>
+                            <li><Link to="/indian-wedding/vittorio-darbare" className="hover:text-black transition-colors">Vittorio Milano X Darbaré</Link></li>
                           </ul>
                         </div>
 
@@ -331,10 +336,10 @@ const Navbar = React.forwardRef((props, ref) => {
                             Shop by Occasion
                           </h4>
                           <ul className="space-y-3 text-sm text-gray-700 text-center">
-                            <li><a href="/indian-wedding/roka" className="hover:text-black transition-colors">Roka</a></li>
-                            <li><a href="/indian-wedding/mehndi" className="hover:text-black transition-colors">Mehndi</a></li>
-                            <li><a href="/indian-wedding/sangeet-cocktail" className="hover:text-black transition-colors">Sangeet & Cocktail</a></li>
-                            <li><a href="/indian-wedding/pheras" className="hover:text-black transition-colors">Pheras</a></li>
+                            <li><Link to="/indian-wedding/roka" className="hover:text-black transition-colors">Roka</Link></li>
+                            <li><Link to="/indian-wedding/mehndi" className="hover:text-black transition-colors">Mehndi</Link></li>
+                            <li><Link to="/indian-wedding/sangeet-cocktail" className="hover:text-black transition-colors">Sangeet & Cocktail</Link></li>
+                            <li><Link to="/indian-wedding/pheras" className="hover:text-black transition-colors">Pheras</Link></li>
                           </ul>
                         </div>
 
@@ -344,15 +349,14 @@ const Navbar = React.forwardRef((props, ref) => {
                             Accessories
                           </h4>
                           <ul className="space-y-3 text-sm text-gray-700 text-center">
-
-                            <li><a href="/indian-wedding/shoes" className="hover:text-black transition-colors">Indian Shoes</a></li>
+                            <li><Link to="/indian-wedding/shoes" className="hover:text-black transition-colors">Indian Shoes</Link></li>
                           </ul>
                         </div>
                       </div>
                     </div>
                   )}
 
-                  {/* Default Dropdowns for others (unchanged) */}
+                  {/* Default Dropdowns for others */}
                   {item !== "Bespoke" &&
                     item !== "Indian Wedding" &&
                     item !== "Made to Measure" &&
@@ -360,13 +364,13 @@ const Navbar = React.forwardRef((props, ref) => {
                     hovered === item && (
                       <div className="absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-56 mt-2">
                         {subcategories[item].map((sub) => (
-                          <a
+                          <Link
                             key={sub.label}
-                            href={sub.link}
+                            to={sub.link}
                             className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                           >
                             {sub.label}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     )}
@@ -391,7 +395,7 @@ const Navbar = React.forwardRef((props, ref) => {
           </div>
         </div>
 
-        {/* Mobile Dropdown (unchanged) */}
+        {/* Mobile Dropdown */}
         {isOpen && (
           <div className="md:hidden bg-white shadow-md px-4 py-4 space-y-4">
             {navLinks.map((item) => (
@@ -402,13 +406,13 @@ const Navbar = React.forwardRef((props, ref) => {
                 {subcategories[item] && (
                   <div className="ml-4 mt-2 space-y-2">
                     {subcategories[item].map((sub) => (
-                      <a
+                      <Link
                         key={sub.label}
-                        href={sub.link}
+                        to={sub.link}
                         className="block text-gray-600 text-sm hover:text-black transition"
                       >
                         {sub.label}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}
